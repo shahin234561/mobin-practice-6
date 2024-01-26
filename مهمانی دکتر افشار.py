@@ -1,21 +1,18 @@
-a = int(input(''))
-b = int(input(''))
-A = bin(a)
-B = bin(b)
+number1 = int(input(''))
+number2 = int(input(''))
+binary1 = bin(number1)
+binary2 = bin(number2)
 
-A=A.replace('0b','')
-B=B.replace('0b','')
-if len(A) <= 32:
-    number_of_zeros_to_add = 32 - len(A)
-    c = A.zfill(len(A) + number_of_zeros_to_add)
+binary1=binary1.replace('0b','')
+binary2=binary2.replace('0b','')
+if len(binary1) <= 32:
+    number_of_zeros_to_add = 32 - len(binary1)
+    c = binary1.zfill(len(binary1) + number_of_zeros_to_add)
 
-if len(B) <= 32:
-    number_of_zeros_to_add = 32 - len(B)
-    d = B.zfill(len(B) + number_of_zeros_to_add)   
+if len(binary2) <= 32:
+    number_of_zeros_to_add = 32 - len(binary2)
+    d = binary2.zfill(len(number2) + number_of_zeros_to_add)   
     
-
-
-
 x = d + c
 
 x=x[::-1]
@@ -31,8 +28,7 @@ while k != 0 :
 for i in list:
     if x[i]=='1':
         print('yes')
-    else:
-        print('no')
+print('no')
        
 
 

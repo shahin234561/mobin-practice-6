@@ -1,29 +1,27 @@
-a=int(input(''))
-b=int(input(''))
-c=int(input(''))
-a=bin(a)
-b=bin(b)
-d=bin(c)
-# print(a)
-# print(b)
-# print(d)
-a=a.replace('0b','')
-b=b.replace('0b','')
-d=d.replace('0b','')
+number1=int(input(''))
+number2=int(input(''))
+number3=int(input(''))
+number1=bin(number1)
+number2=bin(number2)
+number3=bin(number3)
+
+number1=number1.replace('0b','')
+number2=number2.replace('0b','')
+number3=number3.replace('0b','')
 
 x = 0
-if len(a)<len(b):
-    number_of_zeros_to_add = len(b) - len(a)
-    a = a.zfill(len(a) + number_of_zeros_to_add)
-elif len(a)>len(b):
-    number_of_zeros_to_add = len(a) - len(b)
-    b = b.zfill(len(b) + number_of_zeros_to_add)
+if len(number1)<len(number2):
+    number_of_zeros_to_add = len(number2) - len(number1)
+    number1 = number1.zfill(len(number1) + number_of_zeros_to_add)
+elif len(number1)>len(number2):
+    number_of_zeros_to_add = len(number1) - len(number2)
+    number2 = number2.zfill(len(number2) + number_of_zeros_to_add)
 
 carry = 0
 answer = ''
-i = len(a) - 1
+i = len(number1) - 1
 while (i >= 0):
-    if a[i] == '0' and b[i] == '0':
+    if number1[i] == '0' and number2[i] == '0':
         if carry == 0:
             answer = '0' + answer 
         else:
@@ -31,7 +29,7 @@ while (i >= 0):
             carry = 0
         if i == 0 and carry==1:
                 answer = '1' + answer
-    elif a[i] == '1' and b[i] == '0':
+    elif number1[i] == '1' and number2[i] == '0':
         if carry == 0:
             answer = '1' + answer
             
@@ -40,7 +38,7 @@ while (i >= 0):
             carry = 1
         if i == 0 and carry==1:
                 answer = '1' + answer    
-    elif a[i] == '0' and b[i] == '1':
+    elif number1[i] == '0' and number2[i] == '1':
         if carry == 0:
             answer = '1' + answer
         else:
@@ -48,7 +46,7 @@ while (i >= 0):
             carry = 1
         if i == 0 and carry==1:
                 answer = '1' + answer  
-    elif a[i] == '1' and b[i] == '1':
+    elif number1[i] == '1' and number2[i] == '1':
         if carry == 0:
             answer = '0' + answer
             carry = 1
@@ -60,21 +58,13 @@ while (i >= 0):
     i = i -1
 
     
-
-
-
-# print(answer)
-
-
-
-
 number=int(answer,2)
 
 
-if number == c:
+if number == number3:
     print(number)
     print('YES')
-else:
-    print(number)
-    print('NO')
+
+print(number)
+print('NO')
 
